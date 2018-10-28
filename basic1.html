@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<style>
+  canvas {
+    display: block;
+  }
+</style>
+
+<body>
+  <canvas id="rectangle" width="200" height="100" style="border:1px solid #000000;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+  <canvas id="circle" width="200" height="100">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+  <canvas id="text" width="200" height="100" style="border:1px solid #000000;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+  <canvas id="stroke_text" width="200" height="100" style="border:1px solid #000000;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+  <canvas id="linear_gradient" width="200" height="100" style="border:1px solid #000000;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+  <img id="scream" src="https://www.w3schools.com/html/img_the_scream.jpg">
+  <canvas id="image" width="250" height="300" style="border:1px solid #000000;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+</body>
+<script>
+  // // rectangle 정의
+  const rectangle = document.getElementById("rectangle");
+  let ctx = rectangle.getContext("2d");
+  ctx.moveTo(0, 0);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+
+  // circle 정의
+  const circle = document.getElementById("circle");
+  ctx = circle.getContext("2d");
+  ctx.beginPath();
+  ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+  ctx.stroke();
+
+  // text 정의
+  const text = document.getElementById("text");
+  ctx = text.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.fillText("Hello WOrld", 10, 50);
+
+  // stroke text 정의
+  const strokeText = document.getElementById("stroke_text");
+  ctx = strokeText.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.strokeText("Hello WOrld", 10, 50);
+
+  // Linear Gradient 정의
+  const linearGradient = document.getElementById('linear_gradient');
+  ctx = linearGradient.getContext("2d");
+  const grd = ctx.createLinearGradient(0, 0, 200, 0);
+  grd.addColorStop(0, "red");
+  grd.addColorStop(1, "white");
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+
+  const image = document.getElementById('image');
+  ctx = image.getContext('2d');
+  const img = document.getElementById('scream');
+  ctx.drawImage(img, 10, 10);
+
+</script>
+
+</html>
