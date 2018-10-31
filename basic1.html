@@ -22,7 +22,7 @@
   <canvas id="linear_gradient" width="200" height="100" style="border:1px solid #000000;">
     Your browser does not support the HTML5 canvas tag.
   </canvas>
-  <img id="scream" src="https://www.w3schools.com/html/img_the_scream.jpg">
+  <img id="scream" src="https://www.w3schools.com/html/img_the_scream.jpg" width="240" height="297">
   <canvas id="image" width="250" height="300" style="border:1px solid #000000;">
     Your browser does not support the HTML5 canvas tag.
   </canvas>
@@ -63,10 +63,12 @@
   ctx.fillStyle = grd;
   ctx.fillRect(10, 10, 150, 80);
 
-  const image = document.getElementById('image');
-  ctx = image.getContext('2d');
-  const img = document.getElementById('scream');
-  ctx.drawImage(img, 10, 10);
+  window.onload = () => {
+    const image = document.getElementById('image');
+    ctx = image.getContext('2d');
+    const img = document.getElementById('scream');
+    ctx.drawImage(img, 10, 10);
+  };
 
 </script>
 
