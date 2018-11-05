@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <CanvasComponent/>
+        {/* 이것은 그냥 그냥 그냥 */}
       </div>
     );
   }
